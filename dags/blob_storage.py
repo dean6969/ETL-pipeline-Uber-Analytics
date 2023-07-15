@@ -7,7 +7,7 @@ from delete_source_file import delete_source_file
 from data_process_uber import transform_data
 
 default_args = {
-    'start_date': datetime(2023, 1, 1),
+    'start_date': datetime(2023, 07, 16),
 }
 
 dag = DAG(
