@@ -1,0 +1,18 @@
+[
+    {
+        "base_url": "https://raw.githubusercontent.com/cloudboxacademy/covid19/main/ecdc_data/",
+        "file_name": "cases_deaths.csv"
+    },
+    {
+        "base_url": "https://raw.githubusercontent.com/cloudboxacademy/covid19/main/ecdc_data/",
+        "file_name": "country_response.csv"
+    },
+    {
+        "base_url": "https://raw.githubusercontent.com/cloudboxacademy/covid19/main/ecdc_data/",
+        "file_name": "hospital_admissions.csv"
+    },
+    {
+        "base_url": "https://raw.githubusercontent.com/cloudboxacademy/covid19/main/ecdc_data/",
+        "file_name": "testing.csv"
+    }
+]

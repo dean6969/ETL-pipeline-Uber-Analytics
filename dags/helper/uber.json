@@ -1,0 +1,6 @@
+[
+    {
+        "base_url": "https://raw.githubusercontent.com/darshilparmar/uber-etl-pipeline-data-engineering-project/main/data/",
+        "file_name": "uber_data.csv"
+    }
+]

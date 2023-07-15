@@ -1,0 +1,19 @@
+ curl -LfO "https://airflow.apache.org/docs/apache-airflow/2.1.2/docker-compose.yaml"
+
+ mkdir dags
+
+ mkdir logs
+
+ mkdir pugins
+
+ echo -e "AIRFLOW_UID=$(id -u) \nAIRFLOW_GID=0" > .env
+
+
+ $saName = "yourStorageAccountName"
+$rgName = "yourResourceGroupName"
+$sa = Get-AzStorageAccount -StorageAccountName $saName -ResourceGroupName $rgName
+
+$saKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $saName)[0].Value
+
+'DefaultEndpointsProtocol=https;AccountName=' + $saName + ';AccountKey=' + $saKey + ';EndpointSuffix=core.windows.net'
+
