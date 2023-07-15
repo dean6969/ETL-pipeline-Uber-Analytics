@@ -7,14 +7,14 @@ from delete_source_file import delete_source_file
 from data_process_uber import transform_data
 
 default_args = {
-    'start_date': datetime(2023, 7, 16),
+    'start_date': datetime(2023, 7, 13),
 }
 
 dag = DAG(
     'azure_blob_storage_dag',
     default_args=default_args,
     description='A simple Azure Blob Storage DAG',
-    schedule_interval=timedelta(minutes=30),
+    schedule_interval=timedelta(minutes=1),
 )
 
 # # ingest data to blob storage
