@@ -55,7 +55,11 @@ def blob_connection(container_name, json_file):
             # Save the downloaded file to a local file
             local_file_name = element["file_name"]
 
-            df.to_csv(local_file_name)
+            csv_buffer = StringIO()
+
+            df.to_csv(csv_buffer)
+
+            csv_buffer.seek(0)
             # with open(local_file_name, 'wb') as f:
             #     f.write(response.content)
 
@@ -64,9 +68,11 @@ def blob_connection(container_name, json_file):
 
             print("\nUploading to Azure Storage as blob:\n\t" + local_file_name)
 
-            # Upload the created file
-            with open(local_file_name, mode="rb") as data:
-                blob_client.upload_blob(data)
+            # # Upload the created file
+            # with open(local_file_name, mode="rb") as data:
+            #     blob_client.upload_blob(data)
+
+            blob_client.upload_blob(csv_buffer.getvalue(), overwrite=True)
 
             print("\nListing blobs...")
 
@@ -76,11 +82,11 @@ def blob_connection(container_name, json_file):
                 print("\t" + blob.name)
 
             # Delete the local source file
-            print("Deleting the local source file...")
-            print(local_file_name)
-            os.remove(local_file_name)
+            # print("Deleting the local source file...")
+            # print(local_file_name)
+            # os.remove(local_file_name)
 
-            print("Done")
+            # print("Done")
 
     except Exception as ex:
         print('Exception:')

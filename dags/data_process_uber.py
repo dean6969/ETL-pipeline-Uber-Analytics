@@ -24,6 +24,10 @@ def transform_data(**kwargs):
     df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
     df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
 
+    cols = ['tpep_pickup_datetime','tpep_dropoff_datetime']
+    for col in cols:
+        df[col] = df[col].dt.tz_localize('UTC')
+
     df = df.drop_duplicates().reset_index(drop=True)
     df['trip_id'] = df.index
 
