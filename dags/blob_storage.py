@@ -15,7 +15,7 @@ dag = DAG(
     'azure_blob_storage_dag',
     default_args=default_args,
     description='A simple Azure Blob Storage DAG',
-    schedule_interval=timedelta(minutes=30),
+    schedule_interval="@daily",
 )
 
 # # ingest data to blob storage
